@@ -3,7 +3,7 @@ import "./bennybriga.css";
 
 // תמונות לוקאליות (עובד ב-CRA וב-Vite)
 import heroImg from "./assets/hero.png";
-import bookImg from "./assets/book.jpeg"; // או .png
+import bookImg from "./assets/book3.png"; // או .png
 import decorLeft from "./assets/decor-left.png";
 import decorRight from "./assets/decor-right.png";
 import flower from "./assets/flower.png";

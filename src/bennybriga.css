@@ -222,6 +222,10 @@ body {
   height: 160px;
   background-image: var(--decor-top);
 }
+
+.flower-image {
+  align-self: center;
+}
 .about.with-decor::after {
   bottom: -10px;
   right: -6px;

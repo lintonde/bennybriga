@@ -6,6 +6,7 @@ import heroImg from "./assets/hero.png";
 import bookImg from "./assets/book.jpeg"; // או .png
 import decorLeft from "./assets/decor-left.png";
 import decorRight from "./assets/decor-right.png";
+import flower from "./assets/flower.png";
 // אופציונלי לשימוש עתידי:
 // import jarPng from "../assets/jar.png";
 
@@ -72,11 +73,28 @@ export default function BennyBriga({
             nature in a glass—fresh herbs, fruit, and gentle bubbles crafted
             into a vibrant, naturally sparkling drink.
           </p>
+          <div div className="flower-image">
+            <img
+              src={flower}
+              alt="GAZOZ — Book cover by Benny Briga & Adeena Sussman"
+              loading="lazy"
+              width={200}
+            />
+          </div>
           <p>
             No two glasses are the same. Seasonal produce and living cultures
             create subtle molecular changes from second to second—resulting in a
             truly personal, refreshing beverage.
           </p>
+
+          <div div className="flower-image">
+            <img
+              src={flower}
+              alt="GAZOZ — Book cover by Benny Briga & Adeena Sussman"
+              loading="lazy"
+              width={200}
+            />
+          </div>
           <p>
             Whether you’re foraging outdoors or shopping the produce aisle,
             you’ll find what you need to make the{" "}
@@ -113,7 +131,7 @@ export default function BennyBriga({
           </a>
         </div>
 
-        <div className="book-image">
+        <div div className="book-image">
           <img
             src={bookImg}
             alt="GAZOZ — Book cover by Benny Briga & Adeena Sussman"

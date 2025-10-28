@@ -1,0 +1,298 @@
+/* === Google Fonts === */
+@import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=Montserrat:wght@600;700;800&display=swap");
+
+/* === Tokens === */
+:root {
+  --bg: #ffffff;
+  --ink: #1a1a1a;
+  --accent: #0e0e0e;
+}
+
+/* Base */
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "Lora", Georgia, serif;
+  color: var(--ink);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+.page {
+  overflow-x: hidden;
+}
+
+/* Header */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: #fff;
+  border-bottom: 1px solid #eee;
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo {
+  margin: 0;
+  font-family: "Montserrat", system-ui, -apple-system, "Segoe UI", Roboto,
+    sans-serif;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  font-size: 20px;
+}
+.menu-icon {
+  width: 26px;
+  height: 18px;
+  position: relative;
+}
+.menu-icon span {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #111;
+  border-radius: 1px;
+}
+.menu-icon span:nth-child(1) {
+  top: 0;
+}
+.menu-icon span:nth-child(2) {
+  top: 8px;
+}
+.menu-icon span:nth-child(3) {
+  bottom: 0;
+}
+
+/* Hero */
+.hero {
+  min-height: 78vh;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: grid;
+  place-items: end start;
+}
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.22),
+    rgba(0, 0, 0, 0.34)
+  );
+}
+.hero-overlay {
+  position: relative;
+  z-index: 1;
+  color: #fff;
+
+  /* מרכז אופקי ואנכי */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  min-height: 78vh; /* כדי לתפוס את רוב גובה המסך */
+  padding: 0 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.hero-title {
+  margin: 0 0 8px;
+  font-family: "Montserrat", system-ui, -apple-system, "Segoe UI", Roboto,
+    sans-serif;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  font-size: clamp(42px, 9vw, 84px);
+  line-height: 1.02;
+}
+.hero-subtitle {
+  margin: 0 0 22px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  font-size: clamp(16px, 4.4vw, 28px);
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  padding: 12px 22px;
+  border-radius: 2px;
+  font-family: "Montserrat", system-ui, -apple-system, "Segoe UI", Roboto,
+    sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  font-size: 13px;
+  text-transform: uppercase;
+  background: #fff;
+  color: #000;
+}
+.btn.black {
+  background: var(--accent);
+  color: #fff;
+}
+
+/* Sections */
+.section {
+  padding: 56px 0 36px;
+  text-align: center;
+}
+
+/* Intro text */
+.about {
+  position: relative;
+  background: #fff;
+}
+.text-block {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+.text-block h3 {
+  margin: 0 0 10px;
+  font-style: italic;
+  font-weight: 700;
+  font-size: clamp(22px, 5.6vw, 34px);
+  letter-spacing: 0.02em;
+}
+.text-block p {
+  margin: 0 0 14px;
+  color: #444;
+  line-height: 1.85;
+  font-size: clamp(16px, 4.6vw, 19px);
+}
+.text-block p strong {
+  color: #222;
+}
+
+/* Order block */
+.order {
+  background: #fafafa;
+}
+
+/* Book image */
+.book-image {
+  margin: 28px auto 0;
+  max-width: 520px;
+}
+.book-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+}
+
+/* Decorative backgrounds (top/bottom on 'about', left/right on 'order') */
+.with-decor {
+  position: relative;
+  overflow: hidden;
+}
+.about.with-decor::before,
+.about.with-decor::after,
+.order.with-decor::before,
+.order.with-decor::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  opacity: 0.18;
+  filter: saturate(0.9);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+/* about */
+.about.with-decor::before {
+  top: -20px;
+  left: -10px;
+  width: 240px;
+  height: 160px;
+  background-image: var(--decor-top);
+}
+.about.with-decor::after {
+  bottom: -10px;
+  right: -6px;
+  width: 220px;
+  height: 150px;
+  background-image: var(--decor-bottom);
+}
+
+/* order */
+.order.with-decor::before {
+  left: -12px;
+  top: 30px;
+  width: 170px;
+  height: 220px;
+  background-image: var(--decor-left);
+}
+.order.with-decor::after {
+  right: -12px;
+  top: -10px;
+  width: 170px;
+  height: 220px;
+  background-image: var(--decor-right);
+}
+
+/* Desktop */
+@media (min-width: 900px) {
+  .hero-overlay {
+    padding: 22vh 6vw 18vh;
+  }
+
+  .order {
+    display: grid;
+    grid-template-columns: 1fr 520px;
+    align-items: center;
+    gap: 72px;
+    text-align: left;
+    padding: 84px 6vw;
+    justify-content: center;
+  }
+  .order .text-block {
+    max-width: 560px;
+    padding: 0;
+  }
+  .book-image {
+    margin: 0;
+    max-width: 520px;
+  }
+
+  /* fine-tune decorations */
+  .about.with-decor::before {
+    top: -30px;
+    left: 0;
+    width: 300px;
+    height: 200px;
+  }
+  .about.with-decor::after {
+    bottom: -20px;
+    right: 10px;
+    width: 280px;
+    height: 180px;
+  }
+  .order.with-decor::before {
+    left: 0;
+    top: 20px;
+    width: 220px;
+    height: 270px;
+  }
+  .order.with-decor::after {
+    right: 0;
+    top: -20px;
+    width: 220px;
+    height: 270px;
+  }
+}
